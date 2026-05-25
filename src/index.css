@@ -1,0 +1,111 @@
+/* =========================================================
+   MobiSenior — Global Styles
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-primary:   #125491;
+  --brand-electric:  #389ecf;
+  --brand-text:      #2674a5;
+  --brand-bg:        #b5c7de;
+  --brand-orange:    #cb6131;
+  --color-mobi:    #125491;
+  --color-salud:   #2d9e5f;
+  --color-familia: #e8a020;
+  --color-ayuda:   #d93025;
+  --neutral-0:   #ffffff;
+  --neutral-50:  #f4f6fa;
+  --neutral-100: #e8ecf3;
+  --neutral-200: #d3dae5;
+  --neutral-700: #2f3849;
+  --neutral-900: #0e1422;
+  --bg:      #f4f6fa;
+  --surface: #ffffff;
+  --fg:      #0e1422;
+  --fg-2:    #2674a5;
+  --fg-3:    #636d7e;
+  --radius-lg:  18px;
+  --radius-xl:  24px;
+  --radius-2xl: 32px;
+  --shadow-md: 0 6px 16px rgba(18, 84, 145, 0.12);
+  --shadow-lg: 0 14px 32px rgba(18, 84, 145, 0.16);
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast:   140ms;
+  --dur-base:   220ms;
+  --fs-btn:   24px;
+  --fs-body:  20px;
+  --fs-small: 18px;
+  --fs-title: 32px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; touch-action: manipulation; }
+html, body, #root { height: 100%; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Afacad Flux', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  touch-action: manipulation;
+  user-select: none;
+}
+.selectable { user-select: text; }
+
+.btn-senior {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 160px;
+  min-width: 100%;
+  border: none;
+  border-radius: var(--radius-2xl);
+  font-family: inherit;
+  font-size: var(--fs-btn);
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out), filter var(--dur-fast) var(--ease-out);
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+.btn-senior:active { transform: scale(0.96); filter: brightness(0.92); }
+.btn-senior:focus-visible { outline: 3px solid white; outline-offset: 3px; }
+.btn-senior::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0);
+  transition: background var(--dur-fast) var(--ease-out);
+  border-radius: inherit;
+}
+.btn-senior:active::after { background: rgba(255, 255, 255, 0.15); }
+
+.btn-mobi    { background: var(--color-mobi);    box-shadow: 0 8px 24px rgba(18, 84, 145, 0.35); }
+.btn-salud   { background: var(--color-salud);   box-shadow: 0 8px 24px rgba(45, 158, 95, 0.35); }
+.btn-familia { background: var(--color-familia); box-shadow: 0 8px 24px rgba(232, 160, 32, 0.35); }
+.btn-ayuda   { background: var(--color-ayuda);   box-shadow: 0 8px 24px rgba(217, 48, 37, 0.35); }
+.btn-mobi:hover    { box-shadow: 0 12px 32px rgba(18, 84, 145, 0.45); }
+.btn-salud:hover   { box-shadow: 0 12px 32px rgba(45, 158, 95, 0.45); }
+.btn-familia:hover { box-shadow: 0 12px 32px rgba(232, 160, 32, 0.45); }
+.btn-ayuda:hover   { box-shadow: 0 12px 32px rgba(217, 48, 37, 0.45); }
+
+.screen-enter { animation: screenIn var(--dur-base) var(--ease-out) forwards; }
+@keyframes screenIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--brand-bg); border-radius: 999px; }
