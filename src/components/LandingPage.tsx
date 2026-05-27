@@ -56,8 +56,7 @@ export function LandingPage() {
       <nav style={{ background: '#fff', borderBottom: '1px solid #e8ecf3', position: 'sticky', top: 0, zIndex: 50 }}>
         <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 64 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <div style={{ width: 36, height: 36, borderRadius: 10, background: 'linear-gradient(135deg, #125491, #389ecf)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20 }}>🤖</div>
-            <span style={{ fontWeight: 800, fontSize: 20, color: '#125491' }}>MobiSenior</span>
+            <img src="/Mobisenior_logo.png" alt="MobiSenior" style={{ height: 40, width: 'auto', objectFit: 'contain' }} />
           </div>
           <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
             <a href="#como-funciona" style={{ color: '#2674a5', textDecoration: 'none', fontWeight: 600, fontSize: 15 }}>Cómo funciona</a>
@@ -79,48 +78,62 @@ export function LandingPage() {
       </nav>
 
       {/* ── HERO ────────────────────────────────────────── */}
-      <section style={{ background: 'linear-gradient(150deg, #0a3361 0%, #125491 50%, #389ecf 100%)', color: '#fff', padding: '80px 24px 100px' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto', textAlign: 'center' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(255,255,255,0.15)', borderRadius: 999, padding: '6px 16px', fontSize: 14, fontWeight: 600, marginBottom: 24, backdropFilter: 'blur(8px)' }}>
-            <span>🚀</span> Fase de validación con usuarios reales
-          </div>
-          <h1 style={{ fontSize: 'clamp(36px, 6vw, 68px)', fontWeight: 900, lineHeight: 1.1, marginBottom: 24, letterSpacing: '-1px' }}>
-            Tu familiar mayor,<br />
-            <span style={{ color: '#7dd3fc' }}>siempre acompañado</span>
-          </h1>
-          <p style={{ fontSize: 'clamp(17px, 2.5vw, 22px)', color: 'rgba(255,255,255,0.85)', maxWidth: 640, margin: '0 auto 40px', lineHeight: 1.6 }}>
-            Mobi es el asistente de IA que habla con tus mayores cada día, recuerda sus medicaciones, detecta emergencias y mantiene a la familia siempre informada.
-          </p>
+      <section style={{ background: 'linear-gradient(150deg, #0a3361 0%, #125491 50%, #389ecf 100%)', color: '#fff', padding: '72px 24px 80px' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 48, flexWrap: 'wrap' }}>
 
-          {/* Hero CTA buttons */}
-          <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 60 }}>
-            <button
-              onClick={scrollToWaitlist}
-              style={{ background: '#fff', color: '#125491', border: 'none', borderRadius: 14, padding: '16px 32px', fontWeight: 800, fontSize: 18, cursor: 'pointer', boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}
-            >
-              Quiero acceso anticipado →
-            </button>
-            <a
-              href="#como-funciona"
-              style={{ background: 'rgba(255,255,255,0.15)', color: '#fff', border: '2px solid rgba(255,255,255,0.3)', borderRadius: 14, padding: '16px 32px', fontWeight: 700, fontSize: 18, textDecoration: 'none', backdropFilter: 'blur(8px)' }}
-            >
-              Ver cómo funciona
-            </a>
+          {/* Left: text content */}
+          <div style={{ flex: '1 1 420px', minWidth: 0 }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(255,255,255,0.15)', borderRadius: 999, padding: '6px 16px', fontSize: 14, fontWeight: 600, marginBottom: 28, backdropFilter: 'blur(8px)' }}>
+              <span>🚀</span> Fase de validación con usuarios reales
+            </div>
+            <h1 style={{ fontSize: 'clamp(36px, 5vw, 62px)', fontWeight: 900, lineHeight: 1.1, marginBottom: 24, letterSpacing: '-1px' }}>
+              Tu familiar mayor,<br />
+              <span style={{ color: '#7dd3fc' }}>siempre acompañado</span>
+            </h1>
+            <p style={{ fontSize: 'clamp(16px, 2vw, 20px)', color: 'rgba(255,255,255,0.85)', marginBottom: 40, lineHeight: 1.65, maxWidth: 520 }}>
+              Mobi es el asistente de IA que habla con tus mayores cada día, recuerda sus medicaciones, detecta emergencias y mantiene a la familia siempre informada.
+            </p>
+
+            {/* Hero CTA buttons */}
+            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 56 }}>
+              <button
+                onClick={scrollToWaitlist}
+                style={{ background: '#fff', color: '#125491', border: 'none', borderRadius: 14, padding: '16px 32px', fontWeight: 800, fontSize: 17, cursor: 'pointer', boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}
+              >
+                Quiero acceso anticipado →
+              </button>
+              <a
+                href="#como-funciona"
+                style={{ background: 'rgba(255,255,255,0.15)', color: '#fff', border: '2px solid rgba(255,255,255,0.3)', borderRadius: 14, padding: '16px 32px', fontWeight: 700, fontSize: 17, textDecoration: 'none', backdropFilter: 'blur(8px)' }}
+              >
+                Ver cómo funciona
+              </a>
+            </div>
+
+            {/* Stats row */}
+            <div style={{ display: 'flex', gap: 36, flexWrap: 'wrap' }}>
+              {[
+                { num: '4', label: 'módulos integrados' },
+                { num: '24/7', label: 'asistencia continua' },
+                { num: '0€', label: 'para el usuario final' },
+              ].map(s => (
+                <div key={s.label} style={{ textAlign: 'center' }}>
+                  <div style={{ fontSize: 'clamp(26px, 3.5vw, 38px)', fontWeight: 900, color: '#7dd3fc' }}>{s.num}</div>
+                  <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.7)', fontWeight: 600 }}>{s.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Stats row */}
-          <div style={{ display: 'flex', gap: 40, justifyContent: 'center', flexWrap: 'wrap' }}>
-            {[
-              { num: '4', label: 'módulos integrados' },
-              { num: '24/7', label: 'asistencia continua' },
-              { num: '0€', label: 'para el usuario final' },
-            ].map(s => (
-              <div key={s.label} style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 900, color: '#7dd3fc' }}>{s.num}</div>
-                <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.7)', fontWeight: 600 }}>{s.label}</div>
-              </div>
-            ))}
+          {/* Right: robot image */}
+          <div style={{ flex: '0 1 420px', display: 'flex', justifyContent: 'center', alignItems: 'flex-end' }}>
+            <img
+              src="/Mobisenior.svg"
+              alt="Mobi, el asistente de MobiSenior"
+              style={{ width: '100%', maxWidth: 420, objectFit: 'contain', filter: 'drop-shadow(0 24px 48px rgba(0,0,0,0.35))' }}
+            />
           </div>
+
         </div>
       </section>
 
@@ -138,35 +151,32 @@ export function LandingPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 24 }}>
             {[
               {
-                color: '#125491', shadow: 'rgba(18,84,145,0.25)', emoji: '🤖',
+                color: '#125491', shadow: 'rgba(18,84,145,0.25)',
                 title: 'Mobi Chat',
                 desc: 'Conversaciones naturales con IA. Mobi recuerda el historial, detecta el estado emocional y responde con empatía las 24 horas.',
               },
               {
-                color: '#2d9e5f', shadow: 'rgba(45,158,95,0.25)', emoji: '💊',
+                color: '#2d9e5f', shadow: 'rgba(45,158,95,0.25)',
                 title: 'Salud',
                 desc: 'Gestión de medicaciones, recordatorios automáticos y digitalización de citas médicas con foto. Sin papel, sin olvidos.',
               },
               {
-                color: '#e8a020', shadow: 'rgba(232,160,32,0.25)', emoji: '👨‍👩‍👧',
+                color: '#e8a020', shadow: 'rgba(232,160,32,0.25)',
                 title: 'Familia',
                 desc: 'Canal directo con los hijos. Fotos, mensajes y actualizaciones del estado de bienestar, siempre accesibles para toda la familia.',
               },
               {
-                color: '#d93025', shadow: 'rgba(217,48,37,0.25)', emoji: '🆘',
+                color: '#d93025', shadow: 'rgba(217,48,37,0.25)',
                 title: 'Ayuda',
                 desc: 'Botón SOS con un toque. Notificación instantánea a contactos de emergencia vía WhatsApp con localización incluida.',
               },
             ].map(f => (
               <div
                 key={f.title}
-                style={{ background: '#fff', borderRadius: 24, padding: '32px 28px', border: '2px solid #e8ecf3', boxShadow: `0 8px 32px ${f.shadow}`, transition: 'transform 0.2s', cursor: 'default' }}
+                style={{ background: '#fff', borderRadius: 24, padding: '32px 28px', border: '2px solid #e8ecf3', borderTop: `4px solid ${f.color}`, boxShadow: `0 8px 32px ${f.shadow}`, transition: 'transform 0.2s', cursor: 'default' }}
                 onMouseEnter={e => (e.currentTarget.style.transform = 'translateY(-4px)')}
                 onMouseLeave={e => (e.currentTarget.style.transform = '')}
               >
-                <div style={{ width: 64, height: 64, borderRadius: 16, background: f.color, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 32, marginBottom: 20, boxShadow: `0 6px 16px ${f.shadow}` }}>
-                  {f.emoji}
-                </div>
                 <h3 style={{ fontSize: 22, fontWeight: 800, color: f.color, marginBottom: 10 }}>{f.title}</h3>
                 <p style={{ fontSize: 16, color: '#636d7e', lineHeight: 1.6, margin: 0 }}>{f.desc}</p>
               </div>
@@ -352,8 +362,7 @@ export function LandingPage() {
       <footer style={{ background: '#0a1e38', color: 'rgba(255,255,255,0.6)', padding: '40px 24px', textAlign: 'center' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginBottom: 16 }}>
-            <div style={{ width: 30, height: 30, borderRadius: 8, background: 'linear-gradient(135deg, #125491, #389ecf)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16 }}>🤖</div>
-            <span style={{ fontWeight: 800, color: '#fff', fontSize: 16 }}>MobiSenior</span>
+            <img src="/Mobisenior_logo.png" alt="MobiSenior" style={{ height: 32, width: 'auto', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
           </div>
           <p style={{ fontSize: 14, margin: '0 0 16px' }}>
             Un producto de <a href="https://mobilcity.es" style={{ color: '#389ecf', textDecoration: 'none' }}>Mobilcity Hub</a>

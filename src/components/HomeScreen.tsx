@@ -10,28 +10,32 @@ const buttons = [
   {
     id: 'mobi' as Screen,
     label: 'Mobi',
-    emoji: '🤖',
+    emoji: null as string | null,
+    image: '/Mobisenior_avatar.svg',
     description: 'Tu asistente',
     className: 'btn-mobi',
   },
   {
     id: 'salud' as Screen,
     label: 'Salud',
-    emoji: '💊',
+    emoji: '💊' as string | null,
+    image: null as string | null,
     description: 'Citas y pastillas',
     className: 'btn-salud',
   },
   {
     id: 'familia' as Screen,
     label: 'Familia',
-    emoji: '👨‍👩‍👧',
+    emoji: '👨‍👩‍👧' as string | null,
+    image: null as string | null,
     description: 'Fotos y mensajes',
     className: 'btn-familia',
   },
   {
     id: 'ayuda' as Screen,
     label: 'Ayuda',
-    emoji: '🆘',
+    emoji: '🆘' as string | null,
+    image: null as string | null,
     description: 'Llama al socorro',
     className: 'btn-ayuda',
   },
@@ -51,15 +55,12 @@ export function HomeScreen({ nombreUsuario, onNavigate }: HomeScreenProps) {
     <div className="screen-enter flex flex-col h-full bg-[var(--bg)]">
       {/* Header */}
       <header className="flex flex-col items-center pt-8 pb-6 px-6">
-        <div
-          className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-4"
-          style={{
-            background: 'linear-gradient(135deg, #125491, #389ecf)',
-            boxShadow: '0 6px 20px rgba(18,84,145,0.30)',
-          }}
-        >
-          🤖
-        </div>
+        <img
+          src="/Mobisenior_avatar.svg"
+          alt="Mobi"
+          className="w-16 h-16 mb-4"
+          style={{ objectFit: 'contain' }}
+        />
         <p className="text-[var(--fg-3)] text-xl">{greeting},</p>
         <h1
           className="text-4xl font-black text-[var(--brand-primary)] leading-tight"
@@ -78,12 +79,10 @@ export function HomeScreen({ nombreUsuario, onNavigate }: HomeScreenProps) {
             onClick={() => handlePress(btn.id)}
             aria-label={`${btn.label} — ${btn.description}`}
           >
-            <span
-              className="text-5xl leading-none"
-              aria-hidden="true"
-            >
-              {btn.emoji}
-            </span>
+            {btn.image
+              ? <img src={btn.image} alt={btn.label} className="w-12 h-12" style={{ objectFit: 'contain' }} aria-hidden="true" />
+              : <span className="text-5xl leading-none" aria-hidden="true">{btn.emoji}</span>
+            }
             <span className="font-black tracking-tight">
               {btn.label}
             </span>

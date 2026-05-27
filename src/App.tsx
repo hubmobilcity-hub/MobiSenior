@@ -22,10 +22,7 @@ export default function App() {
     case 'mobi':
       return (
         <div className="screen-enter flex flex-col items-center justify-center h-full gap-6 p-8 text-center">
-          <div
-            className="w-24 h-24 rounded-3xl flex items-center justify-center text-5xl"
-            style={{ background: 'linear-gradient(135deg, #125491, #389ecf)', boxShadow: '0 8px 24px rgba(18,84,145,0.35)' }}
-          >🤖</div>
+          <img src="/Mobisenior_avatar.svg" alt="Mobi" className="w-24 h-24" style={{ objectFit: 'contain' }} />
           <h1 className="text-4xl font-black text-[var(--brand-primary)]">Mobi</h1>
           <p className="text-xl text-gray-500 max-w-xs">El chat con Mobi se construye en el paso 3.</p>
           <button
